@@ -1,0 +1,88 @@
+/* Container for the form */
+.addsale-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.addsale-form h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Select Dropdown */
+.addsale-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Label and input fields */
+.addsale-form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.addsale-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Total Amount Display */
+.addsale-form p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.addsale-form button {
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.addsale-form button:hover {
+    background-color: #218838;
+}
+
+/* Cancel button styling */
+.addsale-form button:nth-child(2) {
+    background-color: #dc3545;
+    margin-left: 4%;
+}
+
+.addsale-form button:nth-child(2):hover {
+    background-color: #c82333;
+}
+
+/* Button Wrapper */
+.addsale-form div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
