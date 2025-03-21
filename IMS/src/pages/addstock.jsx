@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import AddStock from "../components/addstock";
-import "./addstock.css"
+import "./css/addstock.css"
 function addstock() {
     const [fivestock, setfivestock] = useState([]);
     const fetchfivestock = async () => {

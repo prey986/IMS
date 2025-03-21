@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Addsale from '../components/addsale';
-import "./addsale.css"
+import "./css/addsale.css"
 function addsale() {
     const [fivesale, setfivesale] = useState([]);
     const fetchfivesale = async () => {

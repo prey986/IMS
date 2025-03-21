@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./addstock.css"
+import "./caddstock.css"
 
 function AddStock({ fetchfivestock }) {
     const [showAddStock, setShowAddStock] = useState(false);

@@ -4,6 +4,7 @@ const cors = require("cors");
 const rout = require("./router/product");
 const addstock = require("./router/addstock");
 const addsale = require("./router/addsales");
+const report = require("./router/salesreport");
 const connectdb = require("./util/db");
 
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use("/api/product", rout);
 app.use("/api/addstock", addstock);
 app.use("/api/addsales", addsale);
+app.use("/api/reports", report);
 const PORT = 5510;
 
 connectdb().then(() => {

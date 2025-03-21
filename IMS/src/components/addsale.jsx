@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import "./addsale.css"
+import "./caddsale.css"
 function Addsale({ fetchfivesale }) {
     const [showaddsale, setshowaddsale] = useState(false);
 
@@ -73,7 +73,7 @@ function Addsale({ fetchfivesale }) {
                 });
                 if (!response.ok) throw new Error('Failed to add stock');
                 fetchfivesale();
-                setShowAddStock(false);
+                setshowaddsale(false);
             } catch (error) {
                 console.log(error);
             }
