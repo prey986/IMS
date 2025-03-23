@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Addsale from '../components/addsale';
-import "./css/addsale.css"
 function addsale() {
     const [fivesale, setfivesale] = useState([]);
     const fetchfivesale = async () => {
@@ -53,7 +52,7 @@ function addsale() {
                     </table>
                 ) : (
                     <p>No Added stock Yet</p>
-                )};
+                )}
             </div>
         </>
     )

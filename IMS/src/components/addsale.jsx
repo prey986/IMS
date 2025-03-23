@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import "./caddsale.css"
+import { IoMdAdd } from "react-icons/io";
+
 function Addsale({ fetchfivesale }) {
     const [showaddsale, setshowaddsale] = useState(false);
 
@@ -81,73 +82,75 @@ function Addsale({ fetchfivesale }) {
 
         return (
             <>
-                <div className="addsale-form">
-                    <h2>Choose a Product</h2>
-                    <select
-                        value={selectedProduct.productid}
-                        onChange={handleProductChange}
-                    >
-                        <option value="" disabled>Select a Product</option>
-                        {products.length > 0 ? (
-                            products.map((product) => (
-                                <option key={product._id} value={product._id}>
-                                    {product.name} ({product.code})
-                                </option>
-                            ))
-                        ) : (
-                            <option disabled>No Products Available</option>
-                        )}
-                    </select><div>
-                        <label htmlFor='customername'>Enter CustomerName</label>
-                        <input
-                            type='text'
-                            name='customername'
-                            id='CustomerName'
-                            value={selectedProduct.customername}
-                            onChange={handleInput}
-                            placeholder='CustomerName'
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='customeremail'>Enter CustomerEmail</label>
-                        <input
-                            type='email'
-                            name='customeremail'
-                            id='CustomerEmail'
-                            value={selectedProduct.customeremail}
-                            onChange={handleInput}
-                            placeholder='CustomerEmail'
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='quantity'>Enter Quantity</label>
-                        <input
-                            type='number'
-                            name='quantity'
-                            id='quantity'
-                            value={selectedProduct.quantity}
-                            onChange={handleInput}
-                            placeholder='Quantity'
-                            required
-                        />
-                    </div>
-                    <p>Total Amount: {calculateTotalAmount()}</p>
-                    <div>
-                        <button onClick={handleSubmit}>submit</button>
-                        <button onClick={() => setshowaddsale(false)}>Cancel</button>
-                    </div>
+                <div>
+                    <form className="addsale-form">
+                        <h2>Choose a Product</h2>
+                        <select
+                            value={selectedProduct.productid}
+                            onChange={handleProductChange}
+                        >
+                            <option value="" disabled>Select a Product</option>
+                            {products.length > 0 ? (
+                                products.map((product) => (
+                                    <option key={product._id} value={product._id}>
+                                        {product.name} ({product.code})
+                                    </option>
+                                ))
+                            ) : (
+                                <option disabled>No Products Available</option>
+                            )}
+                        </select><div>
+                            <label htmlFor='customername'>Enter CustomerName</label>
+                            <input
+                                type='text'
+                                name='customername'
+                                id='CustomerName'
+                                value={selectedProduct.customername}
+                                onChange={handleInput}
+                                placeholder='CustomerName'
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='customeremail'>Enter CustomerEmail</label>
+                            <input
+                                type='email'
+                                name='customeremail'
+                                id='CustomerEmail'
+                                value={selectedProduct.customeremail}
+                                onChange={handleInput}
+                                placeholder='CustomerEmail'
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='quantity'>Enter Quantity</label>
+                            <input
+                                type='number'
+                                name='quantity'
+                                id='quantity'
+                                value={selectedProduct.quantity}
+                                onChange={handleInput}
+                                placeholder='Quantity'
+                                required
+                            />
+                        </div>
+                        <p>Total Amount: {calculateTotalAmount()}</p>
+                        <div>
+                            <button onClick={handleSubmit} className='addsalesubmitbtn'>submit</button>
+                            <button onClick={() => setshowaddsale(false)} className='addsalecancelbtn'>Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </>
         )
     };
     return (
         <>
-            <button onClick={() => setshowaddsale(true)}>Addsale</button>
+            <button onClick={() => setshowaddsale(true)} className='addsalebtn'><IoMdAdd /> Addsale</button>
             {showaddsale && <Addingsale />}
         </>
     )
 }
 
-export default Addsale
+export default Addsale;

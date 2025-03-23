@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { IoMdAdd } from "react-icons/io";
+
 function Addproduct({ fetchAllProducts }) {
     const [showAddProduct, setShowAddProduct] = useState(false);
     const Adding = () => {
@@ -34,7 +36,7 @@ function Addproduct({ fetchAllProducts }) {
         };
         return (
             <div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='addproductfrom'>
                     <div>
                         <label htmlFor="code">Enter Code</label>
                         <input
@@ -74,15 +76,15 @@ function Addproduct({ fetchAllProducts }) {
                             required
                         />
                     </div>
-                    <button type="submit">Save</button>
-                    <button onClick={() => setShowAddProduct(false)}>Cancle</button>
+                    <button type="submit" className='addproductsubmit'>Save</button>
+                    <button onClick={() => setShowAddProduct(false)} className='addproductcancel'>Cancle</button>
                 </form>
             </div>
         );
     };
     return (
         <>
-            <button onClick={() => setShowAddProduct(true)}>Add Product</button>
+            <button onClick={() => setShowAddProduct(true)} className='add-product-button'><IoMdAdd /> Add Product</button>
             {showAddProduct && <Adding />}
         </>
     );

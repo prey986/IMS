@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import "./css/reports.css";
 
 function Reports() {
     const [startDate, setStartDate] = useState("");
@@ -43,7 +42,7 @@ function Reports() {
             </div>
             <div>
                 <div>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className='salereportfrom'>
                         <div>
                             <label>Start Date: </label>
                             <input
@@ -62,14 +61,12 @@ function Reports() {
                                 required
                             />
                         </div>
-                        <div>
-                            <button type="submit">Submit</button>
-                        </div>
+                        <button type="submit" className='reportsubmit'>Submit</button>
                     </form>
                 </div>
-                <div>
+                <div className='title'>
                     <h1>Sales Report</h1>
-                    <div>
+                    <div className='salestable'>
                         {sales.length > 0 ? (
                             <table border={1}>
                                 <thead>
@@ -106,11 +103,11 @@ function Reports() {
                             <p>No products available</p>
                         )}
                     </div>
+                    <h2>Total Sale Amount:{totalSaleAmount}</h2>
                 </div>
-                <p><h2>Total Sale Amount:{totalSaleAmount}</h2></p>
             </div>
         </>
     )
 }
 
-export default Reports
+export default Reports;

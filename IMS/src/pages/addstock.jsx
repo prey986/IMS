@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AddStock from "../components/addstock";
-import "./css/addstock.css"
-function addstock() {
+
+function Addstock() {
     const [fivestock, setfivestock] = useState([]);
     const fetchfivestock = async () => {
         try {
@@ -52,12 +52,12 @@ function addstock() {
                     </table>
                 ) : (
                     <p>No Added stock Yet</p>
-                )};
+                )}
             </div>
 
         </>
     )
 }
 
-export default addstock
+export default Addstock;
 

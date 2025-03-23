@@ -1,6 +1,544 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato',sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.home {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-around;
+    margin: 0% 20%;
+    padding: 10px;
+    background-color: #fffaff;
+    border-radius: 8px;
+}
+
+.low-stock {
+    margin: 0% 20%;
+    text-align: center;
+}
+
+.low-stock table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    background-color: #fffaff;
+}
+
+.low-stock th,
+.low-stock td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.low-stock th {
+    background-color: #ff3939;
+    font-weight: bold;
+}
+
+.low-stock tr:hover {
+    background-color: #f9f9f9;
+}
+
+.chart {
+    margin: 40px auto;
+    width: 40%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.chart canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.chart h2 {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #1e1e1e;
+    ;
+}
+
+.low-stock p {
+    font-size: 1rem;
+    color: #1e1b1b;
+}
+
+.products {
+    text-align: center;
+    margin: 20px;
+}
+
+.products h1 {
+    color: #333;
+}
+
+.product-list-container {
+    display: flex;
+    margin-left: 20%;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.product-list-container h1 {
+    text-align: center;
+}
+
+.product-list-container table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.product-list-container th,
+.product-list-container td {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-list-container th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.product-list-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.product-list-container td {
+    border-bottom: 1px solid #ddd;
+}
+
+.producteditbtn {
+    padding: 8px 12px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.productdeletebtn {
+    padding: 8px 12px;
+    margin: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.productdeletebtn:hover {
+    background-color: #c82333;
+}
+
+.producteditbtn:hover {
+    background-color: #17a2b8;
+}
+
+.updateproduct {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.updateproduct div {
+    margin-bottom: 15px;
+}
+
+.updateproduct label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.updateproduct input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.updateproduct input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.updatebtn,
+.addproductsubmit,
+.addstocksubmitbtn,
+.addsalesubmitbtn,
+.reportsubmit {
+    width: 45%;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.updatebtn :hover,
+.addproductsubmit:hover,
+.addstocksubmitbtn:hover,
+.addsalesubmitbtn:hover,
+.reportsubmit:hover {
+    width: 45%;
+    margin: 5px;
+    background-color: #45a049;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cancelupdateproductbtn,
+.addproductcancel,
+.addstockcancelbtn,
+.addsalecancelbtn {
+    width: 45%;
+    margin: 5px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.addproductfrom {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.addproductfrom label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.addproductfrom input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.addproductfrom input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.cancelupdateproductbtn:hover,
+.addproductcancel:hover,
+.addstockcancelbtn:hover,
+.addsalecancelbtn:hover {
+    background-color: #c82333;
+}
+
+.add-product-button,
+.addstockbtn,
+.addsalebtn {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.add-product-button:hover,
+.addstockbtn:hover,
+.addsalebtn:hover {
+    background-color: #17a2b8;
+}
+
+.addstock {
+    text-align: center;
+    margin: 20px;
+}
+
+.stock-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.stock-details table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    max-width: 1000px;
+}
+
+.stock-details th,
+.stock-details td {
+    padding: 10px;
+    text-align: center;
+}
+
+.stock-details th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.stock-details tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.stock-details td {
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.addstockform {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.addstockform h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.addstockform label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.addstockform select,
+.addstockform input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.addstockform select:focus,
+.addstockform input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.addstockform p {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.addstockform p {
+    color: red;
+    font-size: 14px;
+}
+
+.addsale-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addsale-form h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.addsale-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.addsale-form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.addsale-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.addsale-form div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.addsale {
+    text-align: center;
+    margin: 20px;
+}
+
+.page-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.page-container h1 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.page-container th,
+.page-container td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.page-container th {
+    color: #333;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.page-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.page-container p {
+    font-size: 18px;
+    text-align: center;
+    color: #888;
+}
+
+.reports {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.reports h1,
+.title h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.salereportfrom {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.salereportfrom h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.salereportfrom label {
+    font-size: 1rem;
+    color: #555;
+    margin-right: 10px;
+}
+
+.salereportfrom input[type="date"] {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+.salestable table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.salestable th,
+.salestable td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.salestable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.salestable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.salestable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.salestable p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.title h2 {
+    text-align: center;
 }

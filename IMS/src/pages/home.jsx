@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './css/home.css';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
@@ -47,7 +46,7 @@ function Home() {
                 <div>Total Stock: {totalStock}</div>
             </div>
             <div className="low-stock">
-                <h2>Products with Quantity Less Than 5</h2>
+                <h2>Low Stock Product</h2>
                 {lowStockProducts.length > 0 ? (
                     <table>
                         <thead>

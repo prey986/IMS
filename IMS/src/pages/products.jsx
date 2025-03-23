@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Addproduct from '../components/addproduct';
-import "./css/products.css"
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+
 
 function Products() {
     const [products, setAllProducts] = useState([]);
@@ -76,7 +78,7 @@ function Products() {
                 <Addproduct fetchAllProducts={fetchAllProducts} />
             </div>
             <div>{showupdateproduct && (<div>
-                <form onSubmit={handleupdateSubmit}>
+                <form onSubmit={handleupdateSubmit} className='updateproduct'>
                     <div>
                         <label htmlFor="code">Enter Code</label>
                         <input
@@ -116,12 +118,12 @@ function Products() {
                             required
                         />
                     </div>
-                    <button type="submit">Update</button>
-                    <button onClick={() => setshowupdateproduct(false)}>Cancle</button>
+                    <button type="submit" className='updatebtn'>Update</button>
+                    <button onClick={() => setshowupdateproduct(false)} className='cancelupdateproductbtn'>Cancle</button>
                 </form>
             </div>)}</div>
+            <h1 className='products'>Product List</h1>
             <div className="product-list-container">
-                <h1>Product List</h1>
                 <div>
                     {products.length > 0 ? (
                         <table border={1}>
@@ -142,8 +144,8 @@ function Products() {
                                         <td>{product.stock}</td>
                                         <td>₹{product.price}</td>
                                         <td>
-                                            <button onClick={() => { editclick(product) }}>Edit</button><span />
-                                            <button onClick={() => { deleteproduct(product._id) }}>Delete</button>
+                                            <button onClick={() => { editclick(product) }} className='producteditbtn'><FaEdit /> Edit</button><span />
+                                            <button onClick={() => { deleteproduct(product._id) }} className='productdeletebtn'><MdOutlineDeleteOutline /></button>
                                         </td>
                                     </tr>
                                 ))}

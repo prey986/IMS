@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import "./caddstock.css"
+import { IoMdAdd } from "react-icons/io";
+
 
 function AddStock({ fetchfivestock }) {
     const [showAddStock, setShowAddStock] = useState(false);
@@ -78,7 +79,7 @@ function AddStock({ fetchfivestock }) {
 
         return (
             <>
-                <form>
+                <form className='addstockform'>
                     <h2>Choose a product</h2>
                     <select
                         value={selectedProduct.productid}
@@ -107,8 +108,8 @@ function AddStock({ fetchfivestock }) {
                     />
                     <p>Total Amount: {calculateTotalAmount()}</p>
                     <div>
-                        <button onClick={handleSubmit}>submit</button>
-                        <button onClick={() => setShowAddStock(false)}>Cancel</button>
+                        <button onClick={handleSubmit} className='addstocksubmitbtn'>submit</button>
+                        <button onClick={() => setShowAddStock(false)} className='addstockcancelbtn'>Cancel</button>
                     </div>
                 </form>
             </>
@@ -117,7 +118,7 @@ function AddStock({ fetchfivestock }) {
 
     return (
         <>
-            <button onClick={() => setShowAddStock(true)}>Add Stock</button>
+            <button onClick={() => setShowAddStock(true)} className='addstockbtn'><IoMdAdd /> Add Stock</button>
             {showAddStock && <AddingStock />}
         </>
     );
